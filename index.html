@@ -1,33 +1,31 @@
+<!-- build: 1787909033 -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Sweet_Control</title>
+<title>NØVΛX ESPORT</title>
 
 <!-- PWA : permet d'installer le site sur l'écran d'accueil, sans barre du navigateur -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#08070c">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="icon" href="icon-192.png">
 
 <!-- iOS (Safari) : "Ajouter à l'écran d'accueil" -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Sweet_Control">
-<link rel="apple-touch-icon" href="icon-192.png">
-
-<!-- Polices pour le style de pseudo personnalisé (néon / cyberpunk) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Audiowide&family=Share+Tech+Mono&family=Rajdhani:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<meta name="apple-mobile-web-app-title" content="NØVΛX">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
   :root{
     --bg: #08070c;
     --panel: #100e18;
     --panel2: #17141f;
     --border: #2a2438;
-    --purple: #ff2d55;
-    --cyan: #2196ff;
+    --purple: #a259ff;
+    --cyan: #4dfff3;
     --pink: #ff4dd8;
     --text: #f1eefc;
     --muted: #8b849e;
@@ -37,8 +35,8 @@
     --panel: #ffffff;
     --panel2: #f0edf7;
     --border: #ddd6ea;
-    --purple: #ff2d55;
-    --cyan: #2196ff;
+    --purple: #7c3aed;
+    --cyan: #0891a8;
     --pink: #db2777;
     --text: #1a1625;
     --muted: #6b6478;
@@ -77,44 +75,6 @@
   .tab-bar{
     display:flex;justify-content:center;margin-top:16px;gap:10px;flex-wrap:wrap;
   }
-
-  .gaming-total-wrap{display:flex;justify-content:center;margin-top:20px;}
-  .gaming-total-tab{
-    position:relative;
-    display:inline-flex;align-items:center;gap:8px;
-    padding:9px 18px;
-    border:1px solid var(--border);
-    border-radius:999px;
-    background:var(--panel);
-    cursor:pointer;
-    user-select:none;
-    transition:all .15s ease;
-  }
-  .gaming-total-tab:hover{border-color:var(--cyan);}
-  .gaming-total-tab.open{border-color:var(--cyan);color:var(--cyan);}
-  .gaming-total-tab .gtt-icon{font-size:15px;}
-  .gaming-total-tab .gtt-count{color:var(--cyan);font-weight:900;font-size:15px;}
-  .gaming-total-tab .gtt-lbl{color:var(--muted);text-transform:uppercase;font-size:10.5px;font-weight:700;letter-spacing:1px;}
-  .gaming-total-tab .gtt-caret{color:var(--muted);font-size:10px;margin-left:2px;transition:transform .15s ease;}
-  .gaming-total-tab.open .gtt-caret{transform:rotate(180deg);}
-
-  .gaming-total-dropdown{
-    position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);
-    background:var(--panel);border:1px solid var(--border);border-radius:14px;
-    padding:10px;min-width:250px;
-    display:none;flex-direction:column;gap:6px;
-    box-shadow:0 12px 32px rgba(0,0,0,0.45);
-    z-index:60;
-  }
-  .gaming-total-dropdown.show{display:flex;}
-  .gtd-row{
-    display:flex;justify-content:space-between;align-items:center;gap:10px;
-    padding:9px 12px;border-radius:10px;background:var(--panel2);
-    border:1px solid var(--border);
-    font-size:12.5px;font-weight:700;color:var(--text);
-    letter-spacing:0.3px;
-  }
-  .gtd-row .gtd-val{color:var(--cyan);font-weight:900;font-size:14px;}
   .tab{
     padding:10px 20px;
     border:1px solid var(--border);
@@ -157,11 +117,7 @@
     display:flex;justify-content:space-between;align-items:center;
     margin-bottom:14px;flex-wrap:wrap;gap:10px;
   }
-  .toolbar h2{
-    font-size:24px;letter-spacing:1px;margin:0;color:var(--text);
-    display:flex;align-items:center;gap:10px;font-weight:800;text-transform:uppercase;
-  }
-  .toolbar h2 .game-icon{height:32px;width:auto;flex-shrink:0;object-fit:contain;}
+  .toolbar h2{font-size:16px;letter-spacing:1px;margin:0;color:var(--text);}
   button.primary{
     background:linear-gradient(90deg,var(--purple),var(--pink));
     border:none;color:#fff;padding:10px 18px;border-radius:10px;
@@ -192,7 +148,7 @@
   .avatar.avatar-photo{background:var(--panel2);}
   .avatar.avatar-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 
-  /* --- Photo de profil Matteo (Paramètres) --- */
+  /* --- Photo de profil Admin (Paramètres) --- */
   .admin-avatar-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
   .admin-avatar-preview{
     width:64px;height:64px;border-radius:14px;flex-shrink:0;
@@ -214,85 +170,7 @@
   .btn-photo:hover{border-color:var(--purple);}
   .btn-photo-remove{color:#ff4d6a;}
   .btn-photo-remove:hover{border-color:#ff4d6a;}
-  .pname{
-    font-weight:800;font-size:15px;
-    background:var(--pseudo-gradient,linear-gradient(90deg,#ff2d55,#2196ff));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    display:inline-block;
-  }
-  .pseudo-preview{
-    min-height:48px;border-radius:12px;border:1px solid var(--border);
-    background:var(--panel);display:flex;align-items:center;justify-content:center;
-    padding:10px;font-size:20px;font-weight:900;letter-spacing:.3px;
-  }
-  .pseudo-gradient-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:8px;
-  }
-  .pseudo-gradient-option{
-    border:1px solid var(--border);background:var(--panel2);color:var(--text);
-    border-radius:10px;padding:10px 8px;cursor:pointer;font-weight:800;font-size:12px;
-    transition:transform .15s ease,border-color .15s ease;
-  }
-  .pseudo-gradient-option:hover{transform:translateY(-1px);border-color:var(--purple);}
-  .pseudo-gradient-option.active{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan);}
-  .pseudo-gradient-swatch{
-    height:8px;border-radius:999px;margin-bottom:7px;
-  }
-  /* ===== Style perso du pseudo (néon / cyberpunk) ===== */
-  .mystyled-name{font-weight:800;letter-spacing:0.4px;}
-  .myfont-orbitron{font-family:'Orbitron',sans-serif;}
-  .myfont-audiowide{font-family:'Audiowide',cursive;}
-  .myfont-tech{font-family:'Share Tech Mono',monospace;}
-  .myfont-rajdhani{font-family:'Rajdhani',sans-serif;font-weight:700;}
-  .myfont-pixel{font-family:'Press Start 2P',cursive;}
-
-  .mycolor-neoncyan{color:#0ff;text-shadow:0 0 6px #0ff,0 0 16px rgba(0,255,255,.7),0 0 30px rgba(0,255,255,.4);}
-  .mycolor-neonpink{color:#ff2fd0;text-shadow:0 0 6px #ff2fd0,0 0 16px rgba(255,47,208,.7),0 0 30px rgba(255,47,208,.4);}
-  .mycolor-neonpurple{color:#b026ff;text-shadow:0 0 6px #b026ff,0 0 16px rgba(176,38,255,.7),0 0 30px rgba(176,38,255,.4);}
-  .mycolor-neongreen{color:#39ff14;text-shadow:0 0 6px #39ff14,0 0 16px rgba(57,255,20,.7),0 0 30px rgba(57,255,20,.4);}
-  .mycolor-neonred{color:#ff003c;text-shadow:0 0 6px #ff003c,0 0 16px rgba(255,0,60,.7),0 0 30px rgba(255,0,60,.4);}
-  .mycolor-neongold{color:#ffd700;text-shadow:0 0 6px #ffd700,0 0 16px rgba(255,215,0,.7),0 0 30px rgba(255,215,0,.4);}
-  .mycolor-plasma{
-    display:inline-block;
-    background-image:linear-gradient(90deg,#ff2fd0,#b026ff,#0ff,#39ff14);
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    animation:mystylePulse 6s ease-in-out infinite, mystyleGlitch 4s linear infinite;
-  }
-  @keyframes mystylePulse{
-    0%,100%{filter:hue-rotate(0deg) brightness(1);}
-    50%{filter:hue-rotate(25deg) brightness(1.2);}
-  }
-  @keyframes mystyleGlitch{
-    0%,91%,100%{transform:translate(0,0);}
-    92%{transform:translate(-2px,1px);}
-    93%{transform:translate(2px,-1px);}
-    94%{transform:translate(-1px,0);}
-    95%{transform:translate(1px,1px);}
-    96%{transform:translate(0,0);}
-  }
-
-  .mystyle-preview{
-    min-height:52px;border-radius:12px;border:1px solid var(--border);
-    background-color:var(--panel);display:flex;align-items:center;justify-content:center;
-    padding:10px;font-size:22px;font-weight:900;letter-spacing:.4px;text-align:center;
-  }
-  .mystyle-option-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-  .mystyle-option{
-    border:1px solid var(--border);background:var(--panel2);color:var(--text);
-    border-radius:10px;padding:10px 8px;cursor:pointer;font-weight:800;font-size:12px;
-    text-align:left;transition:transform .15s ease,border-color .15s ease;
-  }
-  .mystyle-option:hover{transform:translateY(-1px);border-color:var(--purple);}
-  .mystyle-option.active{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan);}
-  .mystyle-swatch{height:8px;border-radius:999px;margin-bottom:7px;}
-  .mystyle-font-option{
-    border:1px solid var(--border);background:var(--panel2);color:var(--text);
-    border-radius:10px;padding:12px 8px;cursor:pointer;font-size:15px;text-align:center;
-    transition:transform .15s ease,border-color .15s ease;
-  }
-  .mystyle-font-option:hover{transform:translateY(-1px);border-color:var(--purple);}
-  .mystyle-font-option.active{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan);}
-
+  .pname{font-weight:700;font-size:15px;}
   .prole{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
   .pstats{display:flex;gap:16px;flex-wrap:wrap;}
   .pstat{text-align:center;min-width:54px;}
@@ -334,26 +212,6 @@
   .field input:focus, .field select:focus{outline:none;border-color:var(--purple);}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .modal-actions{display:flex;gap:10px;margin-top:18px;}
-
-  /* --- Recadrage de photo de profil --- */
-  .crop-stage{
-    width:230px;height:230px;margin:0 auto;border-radius:16px;overflow:hidden;
-    position:relative;background:#000;border:1px solid var(--border);
-    touch-action:none;cursor:grab;
-  }
-  .crop-stage.dragging{cursor:grabbing;}
-  .crop-stage img{
-    position:absolute;top:0;left:0;max-width:none;max-height:none;
-    user-select:none;-webkit-user-select:none;pointer-events:none;
-  }
-  .crop-stage-circle{
-    position:absolute;inset:0;pointer-events:none;
-    box-shadow:0 0 0 999px rgba(0,0,0,0.45);
-    border-radius:50%;
-  }
-  .crop-zoom-row{display:flex;align-items:center;gap:10px;margin-top:16px;}
-  .crop-zoom-row input[type="range"]{flex:1;}
-  .crop-hint{color:var(--muted);font-size:12px;text-align:center;margin-top:10px;}
   .modal-actions button{flex:1;padding:11px;border-radius:10px;border:none;font-weight:700;cursor:pointer;}
   .btn-cancel{background:var(--panel2);color:var(--text);border:1px solid var(--border) !important;}
   .btn-save{background:linear-gradient(90deg,var(--purple),var(--cyan));color:#08070c;}
@@ -485,7 +343,7 @@
 
   /* --- ROLE BADGE --- */
   .role-bar{
-    position:absolute;top:14px;right:16px;display:flex;flex-direction:column;align-items:flex-end;gap:4px;max-width:130px;
+    position:absolute;top:14px;right:16px;display:flex;align-items:center;gap:8px;
   }
   .role-pill{
     width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--border);
@@ -495,9 +353,6 @@
   .role-pill img{width:100%;height:100%;object-fit:cover;display:block;}
   .role-pill.admin{color:var(--purple);border-color:var(--purple);}
   .role-pill.guest{color:var(--cyan);border-color:var(--cyan);}
-  .role-name{
-    font-size:11px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  }
 
   /* Hide admin-only controls for guests */
   body.is-guest .toolbar button.primary,
@@ -613,37 +468,15 @@
   .login-account-label{display:flex;flex-direction:column;gap:2px;}
   .login-account-label strong{font-size:14px;}
   .login-account-label span{font-size:11px;color:var(--muted);}
-
-/* ===== THEME ROUGE & BLEU ===== */
-:root{
-  --purple:#ff2d55 !important;
-  --cyan:#2196ff !important;
-}
-button.primary,
-.btn-primary,
-.tab.active{
-  background:linear-gradient(135deg,#ff2d55,#2196ff) !important;
-}
-.tab.active,
-.primary,
-a{
-  color:#fff;
-}
-.role-pill.admin{color:#ff2d55 !important;border-color:#ff2d55 !important;}
-.role-pill.guest{color:#2196ff !important;border-color:#2196ff !important;}
-.toggle-switch input:checked + .toggle-slider{
-  background:linear-gradient(90deg,#ff2d55,#2196ff) !important;
-}
-
 </style>
 
 <!-- LOGIN SCREEN -->
 <div class="login-overlay" id="loginOverlay">
   <div class="login-box">
-    <h1>Sweet_Control</h1>
+    <h1>NØVΛX ESPORT</h1>
     <p class="sub">Team Management</p>
     <div class="field">
-      <label>Mot de passe Matteo</label>
+      <label>Mot de passe Admin</label>
       <div class="pass-wrap">
         <input type="password" id="adminPassInput" placeholder="••••••••" onkeydown="if(event.key==='Enter')loginAdmin()">
         <button type="button" class="pass-toggle" onclick="togglePassVisibility()" id="passToggleBtn">👁</button>
@@ -651,11 +484,11 @@ a{
     </div>
     <button class="primary login-account-btn" onclick="loginAdmin()">
       <span class="login-account-avatar" id="loginAdminAvatar">👤</span>
-      <span class="login-account-label"><strong id="loginAdminNameLabel" class="mystyled-name">Matteo</strong><span>Compte administrateur</span></span>
+      <span class="login-account-label"><strong>Admin</strong><span>Compte administrateur</span></span>
     </button>
     <button class="btn-secondary login-account-btn" onclick="loginGuest()">
       <span class="login-account-avatar" id="loginGuestAvatar">👁</span>
-      <span class="login-account-label"><strong id="loginGuestNameLabel" class="mystyled-name">Léo</strong><span>Compte invité</span></span>
+      <span class="login-account-label"><strong>Invité</strong><span>Compte invité</span></span>
     </button>
     <p class="login-error" id="loginError">Mot de passe incorrect.</p>
   </div>
@@ -667,9 +500,8 @@ a{
   </button>
   <div class="role-bar" id="roleBar" style="display:none;">
     <span class="role-pill" id="rolePill"></span>
-    <span class="role-name mystyled-name" id="roleNameDisplay"></span>
   </div>
-  <h1>Sweet_Control</h1>
+  <h1>NØVΛX ESPORT</h1>
   <p>Team Management</p>
 </header>
 
@@ -686,9 +518,6 @@ a{
     </button>
     <button class="side-menu-item" onclick="openSettings()">
       <span class="side-menu-icon">⚙️</span> Paramètres
-    </button>
-    <button class="side-menu-item" id="updateMenuBtn" onclick="checkForUpdate()">
-      <span class="side-menu-icon">⬇️</span> Mise à jour
     </button>
     <button class="side-menu-item danger" onclick="logoutFromMenu()">
       <span class="side-menu-icon">⏻</span> Déconnexion
@@ -741,107 +570,8 @@ a{
       <p class="settings-msg" id="backupMsg"></p>
     </div>
 
-    <div class="settings-section" id="pseudoSettingsSection">
-      <h4>👤 Pseudos des comptes</h4>
-      <div class="field">
-        <label>Pseudo du compte Matteo</label>
-        <input type="text" id="adminPseudoInput" maxlength="30" placeholder="Matteo">
-      </div>
-      <div class="field" id="guestPseudoField">
-        <label>Pseudo du compte Léo</label>
-        <input type="text" id="guestPseudoInput" maxlength="30" placeholder="Léo">
-      </div>
-      <button class="primary" style="width:100%;" onclick="saveAccountPseudos()">💾 Enregistrer les pseudos</button>
-      <p class="settings-msg" id="pseudoMsg"></p>
-    </div>
-
-    <div class="settings-section" id="pseudoColorSection" style="display:none;">
-      <h4>🎨 Couleur des pseudos</h4>
-      <p class="guest-note" style="margin:0 0 10px;">
-        Choisis le dégradé qui sera utilisé pour afficher les pseudos des joueurs.
-      </p>
-      <div class="pseudo-preview" id="pseudoGradientPreview">Sweet_Control Player</div>
-      <div class="pseudo-gradient-grid" id="pseudoGradientGrid" style="margin-top:10px;">
-        <button type="button" class="pseudo-gradient-option" data-gradient="redblue" onclick="selectPseudoGradient('redblue')">
-          <span class="pseudo-gradient-swatch" style="display:block;background:linear-gradient(90deg,#ff2d55,#2196ff);"></span>Rouge → Bleu
-        </button>
-        <button type="button" class="pseudo-gradient-option" data-gradient="purplepink" onclick="selectPseudoGradient('purplepink')">
-          <span class="pseudo-gradient-swatch" style="display:block;background:linear-gradient(90deg,#7c3aed,#ec4899);"></span>Violet → Rose
-        </button>
-        <button type="button" class="pseudo-gradient-option" data-gradient="cyanblue" onclick="selectPseudoGradient('cyanblue')">
-          <span class="pseudo-gradient-swatch" style="display:block;background:linear-gradient(90deg,#06b6d4,#2563eb);"></span>Cyan → Bleu
-        </button>
-        <button type="button" class="pseudo-gradient-option" data-gradient="greenblue" onclick="selectPseudoGradient('greenblue')">
-          <span class="pseudo-gradient-swatch" style="display:block;background:linear-gradient(90deg,#22c55e,#06b6d4);"></span>Vert → Cyan
-        </button>
-        <button type="button" class="pseudo-gradient-option" data-gradient="orangepink" onclick="selectPseudoGradient('orangepink')">
-          <span class="pseudo-gradient-swatch" style="display:block;background:linear-gradient(90deg,#f97316,#ec4899);"></span>Orange → Rose
-        </button>
-        <button type="button" class="pseudo-gradient-option" data-gradient="goldred" onclick="selectPseudoGradient('goldred')">
-          <span class="pseudo-gradient-swatch" style="display:block;background:linear-gradient(90deg,#facc15,#ef4444);"></span>Or → Rouge
-        </button>
-        <button type="button" class="pseudo-gradient-option" data-gradient="ice" onclick="selectPseudoGradient('ice')">
-          <span class="pseudo-gradient-swatch" style="display:block;background:linear-gradient(90deg,#e0f2fe,#38bdf8);"></span>Glace
-        </button>
-        <button type="button" class="pseudo-gradient-option" data-gradient="rainbow" onclick="selectPseudoGradient('rainbow')">
-          <span class="pseudo-gradient-swatch" style="display:block;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#06b6d4,#6366f1,#ec4899);"></span>Arc-en-ciel
-        </button>
-      </div>
-      <p class="settings-msg" id="pseudoColorMsg"></p>
-    </div>
-
-    <div class="settings-section" id="mystyleSection">
-      <h4>✨ Style de mon pseudo</h4>
-      <p class="guest-note" style="margin:0 0 10px;">
-        Personnalise la couleur et l'écriture de ton propre pseudo (visible uniquement sur ton compte).
-      </p>
-      <div class="mystyle-preview" id="mystylePreview">Pseudo</div>
-
-      <p class="lbl" style="margin:14px 0 8px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Couleur néon</p>
-      <div class="mystyle-option-grid" id="mystyleColorGrid">
-        <button type="button" class="mystyle-option" data-mycolor="classic" onclick="selectMyStyleColor('classic')">
-          <span class="mystyle-swatch" style="display:block;background:var(--muted);"></span>Classique
-        </button>
-        <button type="button" class="mystyle-option" data-mycolor="neoncyan" onclick="selectMyStyleColor('neoncyan')">
-          <span class="mystyle-swatch" style="display:block;background:#0ff;"></span>Néon Cyan
-        </button>
-        <button type="button" class="mystyle-option" data-mycolor="neonpink" onclick="selectMyStyleColor('neonpink')">
-          <span class="mystyle-swatch" style="display:block;background:#ff2fd0;"></span>Néon Rose
-        </button>
-        <button type="button" class="mystyle-option" data-mycolor="neonpurple" onclick="selectMyStyleColor('neonpurple')">
-          <span class="mystyle-swatch" style="display:block;background:#b026ff;"></span>Néon Violet
-        </button>
-        <button type="button" class="mystyle-option" data-mycolor="neongreen" onclick="selectMyStyleColor('neongreen')">
-          <span class="mystyle-swatch" style="display:block;background:#39ff14;"></span>Néon Vert
-        </button>
-        <button type="button" class="mystyle-option" data-mycolor="neonred" onclick="selectMyStyleColor('neonred')">
-          <span class="mystyle-swatch" style="display:block;background:#ff003c;"></span>Néon Rouge
-        </button>
-        <button type="button" class="mystyle-option" data-mycolor="neongold" onclick="selectMyStyleColor('neongold')">
-          <span class="mystyle-swatch" style="display:block;background:#ffd700;"></span>Néon Or
-        </button>
-        <button type="button" class="mystyle-option" data-mycolor="plasma" onclick="selectMyStyleColor('plasma')">
-          <span class="mystyle-swatch" style="display:block;background:linear-gradient(90deg,#ff2fd0,#b026ff,#0ff,#39ff14);"></span>Plasma Cyberpunk
-        </button>
-      </div>
-
-      <p class="lbl" style="margin:14px 0 8px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Écriture</p>
-      <div class="mystyle-option-grid" id="mystyleFontGrid">
-        <button type="button" class="mystyle-font-option" data-myfont="classic" onclick="selectMyStyleFont('classic')">Classique</button>
-        <button type="button" class="mystyle-font-option myfont-orbitron" data-myfont="orbitron" onclick="selectMyStyleFont('orbitron')">Orbitron</button>
-        <button type="button" class="mystyle-font-option myfont-audiowide" data-myfont="audiowide" onclick="selectMyStyleFont('audiowide')">Audiowide</button>
-        <button type="button" class="mystyle-font-option myfont-tech" data-myfont="tech" onclick="selectMyStyleFont('tech')">Tech Mono</button>
-        <button type="button" class="mystyle-font-option myfont-rajdhani" data-myfont="rajdhani" onclick="selectMyStyleFont('rajdhani')">Rajdhani</button>
-        <button type="button" class="mystyle-font-option myfont-pixel" data-myfont="pixel" onclick="selectMyStyleFont('pixel')" style="font-size:11px;">Pixel Arcade</button>
-        <button type="button" class="mystyle-font-option" data-myfont="unicodesans" onclick="selectMyStyleFont('unicodesans')">𝙎𝙬𝙚𝙚𝙩</button>
-        <button type="button" class="mystyle-font-option" data-myfont="unicodebold" onclick="selectMyStyleFont('unicodebold')">𝑺𝒘𝒆𝒆𝒕</button>
-        <button type="button" class="mystyle-font-option" data-myfont="unicodecaps" onclick="selectMyStyleFont('unicodecaps')" style="font-size:13px;">『Sᴡᴇᴇᴛ』</button>
-      </div>
-      <p class="settings-msg" id="mystyleMsg"></p>
-    </div>
-
     <div class="settings-section" id="adminAvatarSection" style="display:none;">
-      <h4>🖼️ Photo de profil Matteo</h4>
+      <h4>🖼️ Photo de profil Admin</h4>
       <p class="guest-note">Cette photo s'affiche à côté de chaque joueur, sur toutes les cartes.</p>
       <div class="admin-avatar-row">
         <div class="admin-avatar-preview" id="adminAvatarPreview">👤</div>
@@ -855,7 +585,7 @@ a{
     </div>
 
     <div class="settings-section" id="adminPasswordSection" style="display:none;">
-      <h4>Sécurité Matteo</h4>
+      <h4>Sécurité Admin</h4>
       <div class="field">
         <label>Mot de passe actuel</label>
         <input type="password" id="currentPassInput" placeholder="••••••••">
@@ -873,7 +603,7 @@ a{
     </div>
 
     <div class="settings-section" id="guestAvatarSection" style="display:none;">
-      <h4>🖼️ Photo de profil Léo</h4>
+      <h4>🖼️ Photo de profil Invité</h4>
       <p class="guest-note">Cette photo s'affiche dans le rond en haut à droite de l'accueil.</p>
       <div class="admin-avatar-row">
         <div class="guest-avatar-preview" id="guestAvatarPreview">👤</div>
@@ -887,7 +617,7 @@ a{
     </div>
 
     <div class="settings-section" id="guestSettingsNote">
-      <p class="guest-note">Connectez-vous en tant qu'Matteo pour changer le mot de passe.</p>
+      <p class="guest-note">Connectez-vous en tant qu'Admin pour changer le mot de passe.</p>
     </div>
 
     <div class="modal-actions">
@@ -898,20 +628,6 @@ a{
 
 <!-- ================= VUE GAMING ================= -->
 <div class="view active" id="view-gaming">
-
-  <div class="gaming-total-wrap">
-    <div class="gaming-total-tab" id="gamingTotalTab" onclick="toggleGamingTotalDropdown(event)">
-      <span class="gtt-count" id="gamingTotalCount">0</span>
-      <span class="gtt-lbl">Joueurs au total</span>
-      <span class="gtt-caret">▾</span>
-      <div class="gaming-total-dropdown" id="gamingTotalDropdown">
-        <div class="gtd-row"><span>Fortnite</span><span class="gtd-val" id="gamingTotalCount-fortnite">0</span></div>
-        <div class="gtd-row"><span>Rocket League Sideswipe</span><span class="gtd-val" id="gamingTotalCount-rl">0</span></div>
-        <div class="gtd-row"><span>Rocket League</span><span class="gtd-val" id="gamingTotalCount-rlstd">0</span></div>
-        <div class="gtd-row"><span>Brawl Stars</span><span class="gtd-val" id="gamingTotalCount-brawl">0</span></div>
-      </div>
-    </div>
-  </div>
 
   <div class="tab-bar">
     <div class="tab active" id="tabBtn-fortnite" onclick="switchGame('fortnite')">FORTNITE</div>
@@ -926,9 +642,7 @@ a{
     <section class="game-section active" id="section-fortnite">
       <div class="stats" id="stats-fortnite"></div>
       <div class="toolbar">
-        <h2>
-          FORTNITE
-        </h2>
+        <h2>ROSTER FORTNITE</h2>
         <button class="primary" onclick="openModal('fortnite')">+ Ajouter un joueur</button>
       </div>
       <div id="rosterContainer-fortnite" class="loading">Chargement...</div>
@@ -938,9 +652,7 @@ a{
     <section class="game-section" id="section-rl">
       <div class="stats" id="stats-rl"></div>
       <div class="toolbar">
-        <h2>
-          ROCKET LEAGUE SIDESWIPE
-        </h2>
+        <h2>ROSTER ROCKET LEAGUE SIDESWIPE</h2>
         <button class="primary" onclick="openModal('rl')">+ Ajouter un joueur</button>
       </div>
       <div id="rosterContainer-rl" class="loading">Chargement...</div>
@@ -950,9 +662,7 @@ a{
     <section class="game-section" id="section-rlstd">
       <div class="stats" id="stats-rlstd"></div>
       <div class="toolbar">
-        <h2>
-          ROCKET LEAGUE
-        </h2>
+        <h2>ROSTER ROCKET LEAGUE</h2>
         <button class="primary" onclick="openModal('rlstd')">+ Ajouter un joueur</button>
       </div>
       <div id="rosterContainer-rlstd" class="loading">Chargement...</div>
@@ -962,9 +672,7 @@ a{
     <section class="game-section" id="section-brawl">
       <div class="stats" id="stats-brawl"></div>
       <div class="toolbar">
-        <h2>
-          BRAWL STARS
-        </h2>
+        <h2>ROSTER BRAWL STARS</h2>
         <button class="primary" onclick="openModal('brawl')">+ Ajouter un joueur</button>
       </div>
       <div id="rosterContainer-brawl" class="loading">Chargement...</div>
@@ -978,7 +686,7 @@ a{
 <div class="view" id="view-reseaux">
   <div class="social-panel">
     <div class="social-header">
-      <h2>🌐 Sweet_Control RÉSEAUX</h2>
+      <h2>🌐 NØVΛX RÉSEAUX</h2>
     </div>
     <div class="social-list">
       <div class="social-btn" id="social-btn-discord">
@@ -1187,7 +895,7 @@ a{
   </div>
 </div>
 
-<!-- MODAL ROCKET LEAGUE SIDESWIPE (pseudo + rank uniquement) -->
+<!-- MODAL ROCKET LEAGUE (pseudo + rank uniquement) -->
 <div class="overlay" id="overlay-rl">
   <div class="modal">
     <h3 id="modalTitle-rl">Ajouter un joueur</h3>
@@ -1221,13 +929,6 @@ a{
     <div class="field">
       <label>Victoires</label>
       <input type="number" id="fWins-rl" placeholder="0" min="0">
-    </div>
-    <div class="field">
-      <label>Type de contrôle</label>
-      <select id="fInput-rl">
-        <option value="tactile">Tactile</option>
-        <option value="manette">Manette</option>
-      </select>
     </div>
     <div class="field">
       <label>URL (lien)</label>
@@ -1336,27 +1037,6 @@ a{
     </div>
   </div>
 </div>
-
-<!-- RECADRAGE PHOTO DE PROFIL -->
-<div class="overlay" id="overlay-crop">
-  <div class="modal">
-    <h3>Recadrer la photo</h3>
-    <div class="crop-stage" id="cropStage">
-      <img id="cropImage" alt="">
-      <div class="crop-stage-circle"></div>
-    </div>
-    <div class="crop-zoom-row">
-      <span>🔍</span>
-      <input type="range" id="cropZoom" min="1" max="3" step="0.01" value="1" oninput="onCropZoomChange()">
-    </div>
-    <p class="crop-hint">Fais glisser pour repositionner, utilise le curseur pour zoomer.</p>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="cancelCrop()">Annuler</button>
-      <button class="btn-save" onclick="confirmCrop()">Valider</button>
-    </div>
-  </div>
-</div>
-
 <div class="toast" id="toast"></div>
 
 <!-- PLAYER DETAIL DRAWER -->
@@ -1387,24 +1067,8 @@ a{
       les appareils que tu utilises (mêmes valeurs partout). Tant que
       c'est vide, le site fonctionne comme avant (localStorage
       uniquement, par appareil, pas de synchronisation). */
-/* ================= SYNCHRONISATION AVEC NOVAX ESPORT =================
-   Sweet_Control et Novax Esport partagent désormais LE MÊME bin jsonbin.io
-   (celui utilisé par Novax Esport). Résultat : un joueur ajouté, modifié
-   ou supprimé sur l'un des deux sites apparaît automatiquement sur l'autre
-   (au chargement, au retour au premier plan, et toutes les 10s via
-   l'intervalle de synchro plus bas).
-   Les anciens identifiants (OLD_...) ci-dessous sont ceux de l'ancien bin
-   propre à Sweet_Control. Ils ne servent plus qu'UNE SEULE FOIS, au premier
-   chargement après cette mise à jour, pour rapatrier les joueurs qui y
-   étaient déjà enregistrés et les fusionner dans le bin partagé (voir
-   migrateToSharedBin plus bas). Ne pas les supprimer avant d'être sûr que
-   la migration a bien eu lieu sur tous les appareils. */
-const JSONBIN_MASTER_KEY = '$2a$10$C1NDhq/quo0lnjpvMCXwGerQa/hhT6qo.3RyxqJxgZAbnNtNBEuuy'; // <-- clé partagée avec Novax Esport
-const JSONBIN_BIN_ID = '6a913440da38895dfe1b2aeb';     // <-- bin partagé avec Novax Esport
-
-const OLD_JSONBIN_MASTER_KEY = '$2a$10$Fxnnrfu/nX0nSIla8ZO.xuKWAvrg9s3T2boyh3vP9wljfi/hhLIbS'; // <-- ancienne clé (Sweet_Control seul)
-const OLD_JSONBIN_BIN_ID = '6a91c278da38895dfe1d1f12';     // <-- ancien bin (Sweet_Control seul)
-const SHARED_BIN_MIGRATION_FLAG = 'sweet_control_migrated_shared_bin_v1';
+const JSONBIN_MASTER_KEY = '$2a$10$C1NDhq/quo0lnjpvMCXwGerQa/hhT6qo.3RyxqJxgZAbnNtNBEuuy'; // <-- ta clé X-Master-Key de jsonbin.io
+const JSONBIN_BIN_ID = '6a913440da38895dfe1b2aeb';     // <-- identifiant du bin
 
 async function fetchRemoteData(){
   if(!JSONBIN_MASTER_KEY || !JSONBIN_BIN_ID) return null;
@@ -1418,211 +1082,58 @@ async function fetchRemoteData(){
   }catch(e){ return null; }
 }
 
-/* ================= ANTI "créé puis supprimé" =================
-   Toute modification locale (ajout/édition/suppression de joueur, réseaux,
-   avatar...) doit être ENVOYÉE au serveur AVANT qu'une synchro entrante
-   (syncAllFromRemote) n'aille lire les données à distance. Sinon la synchro
-   peut récupérer une version encore ancienne (le push n'a pas eu le temps
-   de partir) et écraser localement le changement qu'on vient de faire —
-   qui se retrouve ensuite aussi écrasé côté serveur au moment où le push
-   différé se déclenche enfin. C'est exactement ce qui donnait l'impression
-   qu'un joueur "se crée puis se supprime tout seul".
-   On règle ça avec un verrou : pushPendingPromise représente soit le push
-   en attente (debounce), soit le push en cours d'envoi. syncAllFromRemote
-   attend systématiquement ce verrou avant de faire son fetch. */
 let pushRemoteTimer = null;
-let pushPendingPromise = null;
-
 function pushRemoteData(){
   if(!JSONBIN_MASTER_KEY || !JSONBIN_BIN_ID) return;
   clearTimeout(pushRemoteTimer);
-  if(!pushPendingPromise){
-    pushPendingPromise = new Promise(resolve => {
-      pushRemoteTimer = setTimeout(async () => {
-        await doPushRemoteData();
-        pushPendingPromise = null;
-        resolve();
-      }, 300);
-    });
-  } else {
-    // Une modif arrive pendant le délai : on redémarre juste le minuteur,
-    // la même Promise sera résolue une fois le nouveau setTimeout passé.
-    pushRemoteTimer = setTimeout(async () => {
-      await doPushRemoteData();
-      pushPendingPromise = null;
-    }, 300);
-  }
-}
-
-async function doPushRemoteData(){
-  try{
-    /* Le bin est PARTAGÉ avec Novax Esport : on récupère d'abord la version
-       distante actuelle pour ne pas écraser les données propres à Novax
-       Esport (novaxMeta) qui ne transitent pas par cette appli. Les réseaux
-       sociaux (onglet RÉSEAUX) sont désormais COMMUNS aux deux applis : ils
-       vivent sous novaxMeta.social, partagé en lecture/écriture par les deux
-       sites. Seuls l'avatar admin et les pseudos de compte restent propres à
-       Sweet_Control, sous sweetControlMeta, pour éviter que Novax Esport les
-       écrase. */
-    const current = (await fetchRemoteData()) || {};
-    const payload = {
-      ...current,
-      fortnite: games.fortnite.players,
-      rl: games.rl.players,
-      rlstd: games.rlstd.players,
-      brawl: games.brawl.players,
-      novaxMeta: { ...(current.novaxMeta || {}), social: socialLinks },
-      sweetControlMeta: { adminAvatar: adminAvatar, accountNames: accountNames }
-    };
-    await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_MASTER_KEY },
-      body: JSON.stringify(payload)
-    });
-  }catch(e){}
-}
-
-/* Force l'envoi immédiat d'une sauvegarde en attente (sans attendre les
-   300ms de debounce), et renvoie une promesse qui se résout une fois que
-   c'est bien parti sur le serveur. */
-function flushPendingPush(){
-  if(pushRemoteTimer){
-    clearTimeout(pushRemoteTimer);
-    pushRemoteTimer = null;
-    pushPendingPromise = doPushRemoteData().then(() => { pushPendingPromise = null; });
-  }
-  return pushPendingPromise || Promise.resolve();
-}
-
-/* ================= MIGRATION UNIQUE VERS LE BIN PARTAGÉ =================
-   Rapatrie les joueurs qui étaient enregistrés dans l'ANCIEN bin propre à
-   Sweet_Control (avant la synchro avec Novax Esport) et les fusionne avec
-   ce qui existe déjà dans le bin partagé, sans rien écraser des deux côtés.
-   Ne s'exécute qu'UNE FOIS par appareil (verrou localStorage), puis pousse
-   le résultat fusionné vers le bin partagé. */
-async function fetchBinData(binId, masterKey){
-  if(!binId || !masterKey) return null;
-  try{
-    const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
-      headers: { 'X-Master-Key': masterKey, 'X-Bin-Meta': 'false' },
-      cache: 'no-store'
-    });
-    if(!res.ok) return null;
-    return await res.json();
-  }catch(e){ return null; }
-}
-
-async function migrateToSharedBin(){
-  try{
-    if(localStorage.getItem(SHARED_BIN_MIGRATION_FLAG) === '1') return;
-    if(!OLD_JSONBIN_BIN_ID || !OLD_JSONBIN_MASTER_KEY){
-      localStorage.setItem(SHARED_BIN_MIGRATION_FLAG, '1');
-      return;
-    }
-    const [oldData, sharedData] = await Promise.all([
-      fetchBinData(OLD_JSONBIN_BIN_ID, OLD_JSONBIN_MASTER_KEY),
-      fetchBinData(JSONBIN_BIN_ID, JSONBIN_MASTER_KEY)
-    ]);
-    if(!oldData){
-      // Ancien bin vide ou injoignable : rien à rapatrier.
-      localStorage.setItem(SHARED_BIN_MIGRATION_FLAG, '1');
-      return;
-    }
-    let changed = false;
-    ['fortnite','rl','rlstd','brawl'].forEach(g => {
-      const oldList = Array.isArray(oldData[g]) ? oldData[g] : [];
-      const sharedList = (sharedData && Array.isArray(sharedData[g])) ? sharedData[g] : [];
-      const knownIds = new Set(sharedList.map(p => p.id));
-      const toAdd = oldList.filter(p => !knownIds.has(p.id));
-      if(toAdd.length){ changed = true; }
-      const merged = sharedList.concat(toAdd);
-      games[g].players = merged;
-      try{ localStorage.setItem(games[g].storageKey, JSON.stringify(merged)); }catch(e){}
-    });
-    ['fortnite','rl','rlstd','brawl'].forEach(g => render(g));
-
-    /* Rapatrie aussi nos propres réseaux sociaux / avatar admin / pseudos
-       de compte depuis l'ancien bin (format à plat). Les réseaux sociaux
-       sont désormais partagés sous novaxMeta.social : on ne les rapatrie que
-       si aucune valeur n'existe déjà là-bas (déjà migré depuis un autre
-       appareil, ou déjà défini par Novax Esport). L'avatar admin et les
-       pseudos de compte restent propres à Sweet_Control (sweetControlMeta). */
-    const existingSocial = (sharedData && sharedData.novaxMeta && sharedData.novaxMeta.social) || null;
-    const existingSweetMeta = (sharedData && sharedData.sweetControlMeta) || null;
-    if(!existingSocial && oldData.social){
-      const mergedSocial = mergeSocialLinks(oldData.social);
-      Object.keys(mergedSocial).forEach(k => { socialLinks[k] = mergedSocial[k]; });
-      try{ localStorage.setItem(SOCIAL_STORAGE_KEY, JSON.stringify(socialLinks)); }catch(e){}
-      renderSocialStats();
-      changed = true;
-    }
-    if(!existingSweetMeta){
-      if(typeof oldData.adminAvatar !== 'undefined' && oldData.adminAvatar){
-        adminAvatar = oldData.adminAvatar;
-        try{ localStorage.setItem(ADMIN_AVATAR_STORAGE_KEY, adminAvatar); }catch(e){}
-        renderAdminAvatarPreview();
-        changed = true;
-      }
-      if(oldData.accountNames && typeof oldData.accountNames === 'object'){
-        if(typeof oldData.accountNames.admin === 'string' && oldData.accountNames.admin.trim()) accountNames.admin = oldData.accountNames.admin.trim();
-        if(typeof oldData.accountNames.guest === 'string' && oldData.accountNames.guest.trim()) accountNames.guest = oldData.accountNames.guest.trim();
-        try{ localStorage.setItem(ACCOUNT_NAMES_STORAGE_KEY, JSON.stringify(accountNames)); }catch(e){}
-        updateAccountNameDisplays();
-        changed = true;
-      }
-    }
-
-    if(changed){
-      await doPushRemoteData();
-    }
-    localStorage.setItem(SHARED_BIN_MIGRATION_FLAG, '1');
-  }catch(e){
-    // En cas d'erreur, on ne pose pas le verrou : nouvel essai au prochain chargement.
-  }
+  pushRemoteTimer = setTimeout(async () => {
+    try{
+      /* Le bin est PARTAGÉ avec Sweet_Control : on récupère d'abord la
+         version distante actuelle pour ne pas écraser les données propres
+         à Sweet_Control (sweetControlMeta) qui ne transitent pas par cette
+         appli. Nos propres réseaux sociaux / avatar admin vivent sous
+         novaxMeta pour la même raison (éviter que Sweet_Control écrase
+         les nôtres). */
+      const current = (await fetchRemoteData()) || {};
+      const payload = {
+        ...current,
+        fortnite: games.fortnite.players,
+        rl: games.rl.players,
+        rlstd: games.rlstd.players,
+        brawl: games.brawl.players,
+        novaxMeta: { social: socialLinks, adminAvatar: adminAvatar }
+      };
+      await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_MASTER_KEY },
+        body: JSON.stringify(payload)
+      });
+    }catch(e){}
+  }, 300);
 }
 
 let hasDoneInitialSync = false;
-let syncInFlight = false;
 
 async function syncAllFromRemote(){
-  // On ne lance jamais deux synchros entrantes en même temps (l'intervalle
-  // de 20s et le retour au premier plan peuvent se chevaucher).
-  if(syncInFlight) return;
-  syncInFlight = true;
-  try{
-    // Étape clé : on s'assure que toute modif locale pas encore envoyée
-    // part bien AVANT d'aller lire les données distantes.
-    await flushPendingPush();
-    const remote = await fetchRemoteData();
-    if(!remote) return;
-  /* Les réseaux sociaux (onglet RÉSEAUX) sont désormais COMMUNS aux deux
-     applis : on les lit depuis novaxMeta.social, partagé avec Novax Esport.
-     L'avatar admin et les pseudos de compte restent propres à Sweet_Control,
-     sous sweetControlMeta. */
-  const novaxMeta = remote.novaxMeta || {};
-  const sweetMeta = remote.sweetControlMeta || {};
+  const remote = await fetchRemoteData();
+  if(!remote) return;
+  /* Repli une seule fois sur les anciennes clés à plat (social/adminAvatar)
+     si novaxMeta n'existe pas encore côté serveur — c'était l'ancien format,
+     avant le partage du bin avec Sweet_Control. */
+  const novaxMeta = remote.novaxMeta || { social: remote.social, adminAvatar: remote.adminAvatar };
   if(novaxMeta.social){
     const merged = mergeSocialLinks(novaxMeta.social);
     Object.keys(merged).forEach(k => { socialLinks[k] = merged[k]; });
     localStorage.setItem(SOCIAL_STORAGE_KEY, JSON.stringify(socialLinks));
     renderSocialStats();
   }
-  if(typeof sweetMeta.adminAvatar !== 'undefined' && sweetMeta.adminAvatar !== adminAvatar){
-    adminAvatar = sweetMeta.adminAvatar || null;
+  if(typeof novaxMeta.adminAvatar !== 'undefined' && novaxMeta.adminAvatar !== adminAvatar){
+    adminAvatar = novaxMeta.adminAvatar || null;
     try{
       if(adminAvatar) localStorage.setItem(ADMIN_AVATAR_STORAGE_KEY, adminAvatar);
       else localStorage.removeItem(ADMIN_AVATAR_STORAGE_KEY);
     }catch(e){}
     renderAdminAvatarPreview();
-  }
-  if(sweetMeta.accountNames && typeof sweetMeta.accountNames === 'object'){
-    const namesChanged = sweetMeta.accountNames.admin !== accountNames.admin || sweetMeta.accountNames.guest !== accountNames.guest;
-    if(namesChanged){
-      if(typeof sweetMeta.accountNames.admin === 'string' && sweetMeta.accountNames.admin.trim()) accountNames.admin = sweetMeta.accountNames.admin.trim();
-      if(typeof sweetMeta.accountNames.guest === 'string' && sweetMeta.accountNames.guest.trim()) accountNames.guest = sweetMeta.accountNames.guest.trim();
-      try{ localStorage.setItem(ACCOUNT_NAMES_STORAGE_KEY, JSON.stringify(accountNames)); }catch(e){}
-      updateAccountNameDisplays();
-    }
   }
   ['fortnite','rl','rlstd','brawl'].forEach(g => {
     if(Array.isArray(remote[g])){
@@ -1640,17 +1151,14 @@ async function syncAllFromRemote(){
       newPlayers.forEach(p => notifyNewPlayer(g, p.pseudo));
     }
   });
-    hasDoneInitialSync = true;
-  } finally {
-    syncInFlight = false;
-  }
+  hasDoneInitialSync = true;
 }
 
 /* Synchro périodique : c'est ce qui permet à un AUTRE appareil de détecter
    et notifier un joueur ajouté ailleurs, sans avoir besoin de rouvrir l'appli
    ni de changer d'onglet. jsonbin.io ne propose pas de "push" en temps réel,
    donc on interroge régulièrement (polling). */
-setInterval(syncAllFromRemote, 10000);
+setInterval(syncAllFromRemote, 20000);
 document.addEventListener('visibilitychange', () => {
   if(document.visibilityState === 'visible') syncAllFromRemote();
 });
@@ -1742,51 +1250,6 @@ let currentGame = 'fortnite';
 const DEFAULT_ADMIN_PASSWORD = '31O311Ms$';
 let ADMIN_PASSWORD = localStorage.getItem('novax_admin_pw') || DEFAULT_ADMIN_PASSWORD;
 let currentRole = null; // 'admin' | 'guest'
-const ACCOUNT_NAMES_STORAGE_KEY = 'novax_account_names';
-let accountNames = { admin: 'Matteo', guest: 'Léo' };
-try{
-  const savedNames = JSON.parse(localStorage.getItem(ACCOUNT_NAMES_STORAGE_KEY) || 'null');
-  if(savedNames && typeof savedNames === 'object'){
-    if(typeof savedNames.admin === 'string' && savedNames.admin.trim()) accountNames.admin = savedNames.admin.trim();
-    if(typeof savedNames.guest === 'string' && savedNames.guest.trim()) accountNames.guest = savedNames.guest.trim();
-  }
-}catch(e){}
-
-function getAccountName(role){ return accountNames[role] || (role === 'admin' ? 'Matteo' : 'Léo'); }
-function updateAccountNameDisplays(){
-  const adminLabel = document.querySelector('#loginAdminAvatar')?.parentElement?.querySelector('strong');
-  const guestLabel = document.querySelector('#loginGuestAvatar')?.parentElement?.querySelector('strong');
-  if(adminLabel) adminLabel.textContent = getAccountName('admin');
-  if(guestLabel) guestLabel.textContent = getAccountName('guest');
-  const adminPassLabel = document.querySelector('label[for="adminPassInput"]');
-  if(adminPassLabel) adminPassLabel.textContent = 'Mot de passe ' + getAccountName('admin');
-  const adminSectionTitle = document.querySelector('#adminAvatarSection h4');
-  if(adminSectionTitle) adminSectionTitle.textContent = '🖼️ Photo de profil ' + getAccountName('admin');
-  const adminSecurityTitle = document.querySelector('#adminPasswordSection h4');
-  if(adminSecurityTitle) adminSecurityTitle.textContent = 'Sécurité ' + getAccountName('admin');
-  const guestSectionTitle = document.querySelector('#guestAvatarSection h4');
-  if(guestSectionTitle) guestSectionTitle.textContent = '🖼️ Photo de profil ' + getAccountName('guest');
-  const note = document.querySelector('#guestSettingsNote .guest-note');
-  if(note) note.textContent = 'Connectez-vous en tant que ' + getAccountName('admin') + ' pour changer le mot de passe.';
-  if(currentRole) updateRolePill();
-  applyAllMyStyles();
-}
-function loadAccountNameInputs(){
-  const a=document.getElementById('adminNameInput'), g=document.getElementById('guestNameInput');
-  if(a) a.value=getAccountName('admin');
-  if(g) g.value=getAccountName('guest');
-}
-function saveAccountNames(){
-  const a=document.getElementById('adminNameInput'), g=document.getElementById('guestNameInput');
-  const admin=(a?.value||'').trim(), guest=(g?.value||'').trim();
-  const msg=document.getElementById('accountNamesMsg');
-  if(!admin || !guest){ if(msg){msg.textContent='Les deux pseudos sont obligatoires.';msg.className='settings-msg error';} return; }
-  accountNames={admin,guest};
-  try{ localStorage.setItem(ACCOUNT_NAMES_STORAGE_KEY, JSON.stringify(accountNames)); }catch(e){}
-  updateAccountNameDisplays();
-  if(msg){msg.textContent='Pseudos enregistrés.';msg.className='settings-msg success';}
-  pushRemoteData();
-}
 
 /* ================= PHOTO DE PROFIL ADMIN =================
    Une seule photo pour l'admin, affichée sur toutes les cartes joueurs
@@ -1805,10 +1268,10 @@ function renderLoginAvatars(){
   const adminEl = document.getElementById('loginAdminAvatar');
   const guestEl = document.getElementById('loginGuestAvatar');
   if(adminEl){
-    adminEl.innerHTML = adminAvatar ? `<img src="${adminAvatar}" alt="Matteo">` : '👤';
+    adminEl.innerHTML = adminAvatar ? `<img src="${adminAvatar}" alt="Admin">` : '👤';
   }
   if(guestEl){
-    guestEl.innerHTML = guestAvatar ? `<img src="${guestAvatar}" alt="Léo">` : '👁';
+    guestEl.innerHTML = guestAvatar ? `<img src="${guestAvatar}" alt="Invité">` : '👁';
   }
 }
 
@@ -1834,7 +1297,29 @@ function handleGuestAvatarChange(event){
     msg.className = 'settings-msg error';
     return;
   }
-  openAvatarCropper(file, 'guest');
+  const reader = new FileReader();
+  reader.onload = () => {
+    const img = new Image();
+    img.onload = () => {
+      const size = 256;
+      const canvas = document.createElement('canvas');
+      canvas.width = size; canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      const minSide = Math.min(img.width, img.height);
+      const sx = (img.width - minSide) / 2;
+      const sy = (img.height - minSide) / 2;
+      ctx.drawImage(img, sx, sy, minSide, minSide, 0, 0, size, size);
+      guestAvatar = canvas.toDataURL('image/jpeg', 0.85);
+      try{ localStorage.setItem(GUEST_AVATAR_STORAGE_KEY, guestAvatar); }catch(e){}
+      renderGuestAvatarPreview();
+      renderLoginAvatars();
+      updateRolePill();
+      msg.textContent = 'Photo mise à jour ✓';
+      msg.className = 'settings-msg success';
+    };
+    img.src = reader.result;
+  };
+  reader.readAsDataURL(file);
   event.target.value = '';
 }
 
@@ -1878,7 +1363,33 @@ function handleAdminAvatarChange(event){
     msg.className = 'settings-msg error';
     return;
   }
-  openAvatarCropper(file, 'admin');
+  const reader = new FileReader();
+  reader.onload = () => {
+    const img = new Image();
+    img.onload = () => {
+      /* Redimensionne + recadre en carré pour garder un fichier léger
+         (important car ça part aussi dans la sauvegarde jsonbin.io). */
+      const size = 256;
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      const minSide = Math.min(img.width, img.height);
+      const sx = (img.width - minSide) / 2;
+      const sy = (img.height - minSide) / 2;
+      ctx.drawImage(img, sx, sy, minSide, minSide, 0, 0, size, size);
+      adminAvatar = canvas.toDataURL('image/jpeg', 0.85);
+      try{ localStorage.setItem(ADMIN_AVATAR_STORAGE_KEY, adminAvatar); }catch(e){}
+      renderAdminAvatarPreview();
+      renderLoginAvatars();
+      ['fortnite','rl','rlstd','brawl'].forEach(g => render(g));
+      pushRemoteData();
+      msg.textContent = 'Photo mise à jour ✓';
+      msg.className = 'settings-msg success';
+    };
+    img.src = reader.result;
+  };
+  reader.readAsDataURL(file);
   event.target.value = '';
 }
 
@@ -1893,159 +1404,6 @@ function removeAdminAvatar(){
   msg.textContent = 'Photo retirée.';
   msg.className = 'settings-msg';
 }
-
-/* ================= RECADRAGE DE PHOTO DE PROFIL =================
-   Ouvre une fenêtre où l'utilisateur peut déplacer (glisser) et zoomer
-   (curseur) sa photo avant de la valider en tant qu'avatar carré. */
-const CROP_VIEWPORT = 230;
-let cropTargetRole = null;
-let cropNatW = 0, cropNatH = 0, cropMinScale = 1, cropZoomFactor = 1;
-let cropTranslateX = 0, cropTranslateY = 0;
-let cropDragging = false, cropStartX = 0, cropStartY = 0, cropOrigX = 0, cropOrigY = 0;
-
-function openAvatarCropper(file, role){
-  const reader = new FileReader();
-  reader.onload = () => {
-    const img = new Image();
-    img.onload = () => {
-      cropTargetRole = role;
-      cropNatW = img.naturalWidth;
-      cropNatH = img.naturalHeight;
-      cropMinScale = Math.max(CROP_VIEWPORT / cropNatW, CROP_VIEWPORT / cropNatH);
-      cropZoomFactor = 1;
-      const cropImg = document.getElementById('cropImage');
-      cropImg.src = reader.result;
-      const dispW = cropNatW * cropMinScale;
-      const dispH = cropNatH * cropMinScale;
-      cropTranslateX = (CROP_VIEWPORT - dispW) / 2;
-      cropTranslateY = (CROP_VIEWPORT - dispH) / 2;
-      document.getElementById('cropZoom').value = 1;
-      updateCropImageStyle();
-      document.getElementById('overlay-crop').classList.add('show');
-    };
-    img.src = reader.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-function updateCropImageStyle(){
-  const cropImg = document.getElementById('cropImage');
-  if(!cropImg) return;
-  const scale = cropMinScale * cropZoomFactor;
-  cropImg.style.width = (cropNatW * scale) + 'px';
-  cropImg.style.height = (cropNatH * scale) + 'px';
-  cropImg.style.left = cropTranslateX + 'px';
-  cropImg.style.top = cropTranslateY + 'px';
-}
-
-function clampCropTranslate(){
-  const scale = cropMinScale * cropZoomFactor;
-  const dispW = cropNatW * scale;
-  const dispH = cropNatH * scale;
-  const minX = Math.min(0, CROP_VIEWPORT - dispW);
-  const minY = Math.min(0, CROP_VIEWPORT - dispH);
-  cropTranslateX = Math.max(minX, Math.min(0, cropTranslateX));
-  cropTranslateY = Math.max(minY, Math.min(0, cropTranslateY));
-}
-
-function onCropZoomChange(){
-  cropZoomFactor = Number(document.getElementById('cropZoom').value) || 1;
-  clampCropTranslate();
-  updateCropImageStyle();
-}
-
-function cropPointerDown(e){
-  cropDragging = true;
-  const stage = document.getElementById('cropStage');
-  if(stage) stage.classList.add('dragging');
-  const pt = e.touches ? e.touches[0] : e;
-  cropStartX = pt.clientX;
-  cropStartY = pt.clientY;
-  cropOrigX = cropTranslateX;
-  cropOrigY = cropTranslateY;
-  if(e.pointerId !== undefined && stage && stage.setPointerCapture){
-    try{ stage.setPointerCapture(e.pointerId); }catch(err){}
-  }
-  e.preventDefault();
-}
-
-function cropPointerMove(e){
-  if(!cropDragging) return;
-  const pt = e.touches ? e.touches[0] : e;
-  cropTranslateX = cropOrigX + (pt.clientX - cropStartX);
-  cropTranslateY = cropOrigY + (pt.clientY - cropStartY);
-  clampCropTranslate();
-  updateCropImageStyle();
-  e.preventDefault();
-}
-
-function cropPointerUp(e){
-  cropDragging = false;
-  const stage = document.getElementById('cropStage');
-  if(stage) stage.classList.remove('dragging');
-}
-
-function cancelCrop(){
-  document.getElementById('overlay-crop').classList.remove('show');
-  cropTargetRole = null;
-}
-
-function confirmCrop(){
-  if(!cropTargetRole) return;
-  const cropImg = document.getElementById('cropImage');
-  const outSize = 256;
-  const scale = cropMinScale * cropZoomFactor;
-  const sx = (0 - cropTranslateX) / scale;
-  const sy = (0 - cropTranslateY) / scale;
-  const sSize = CROP_VIEWPORT / scale;
-  const canvas = document.createElement('canvas');
-  canvas.width = outSize;
-  canvas.height = outSize;
-  const ctx = canvas.getContext('2d');
-  ctx.drawImage(cropImg, sx, sy, sSize, sSize, 0, 0, outSize, outSize);
-  const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
-
-  if(cropTargetRole === 'admin'){
-    adminAvatar = dataUrl;
-    try{ localStorage.setItem(ADMIN_AVATAR_STORAGE_KEY, adminAvatar); }catch(e){}
-    renderAdminAvatarPreview();
-    renderLoginAvatars();
-    ['fortnite','rl','rlstd','brawl'].forEach(g => render(g));
-    updateRolePill();
-    pushRemoteData();
-    const msg = document.getElementById('adminAvatarMsg');
-    if(msg){ msg.textContent = 'Photo mise à jour ✓'; msg.className = 'settings-msg success'; }
-  } else {
-    guestAvatar = dataUrl;
-    try{ localStorage.setItem(GUEST_AVATAR_STORAGE_KEY, guestAvatar); }catch(e){}
-    renderGuestAvatarPreview();
-    renderLoginAvatars();
-    updateRolePill();
-    const msg = document.getElementById('guestAvatarMsg');
-    if(msg){ msg.textContent = 'Photo mise à jour ✓'; msg.className = 'settings-msg success'; }
-  }
-
-  document.getElementById('overlay-crop').classList.remove('show');
-  cropTargetRole = null;
-}
-
-(function initCropStageEvents(){
-  const stage = document.getElementById('cropStage');
-  if(!stage) return;
-  if(window.PointerEvent){
-    stage.addEventListener('pointerdown', cropPointerDown);
-    stage.addEventListener('pointermove', cropPointerMove);
-    stage.addEventListener('pointerup', cropPointerUp);
-    stage.addEventListener('pointercancel', cropPointerUp);
-  } else {
-    stage.addEventListener('mousedown', cropPointerDown);
-    window.addEventListener('mousemove', cropPointerMove);
-    window.addEventListener('mouseup', cropPointerUp);
-    stage.addEventListener('touchstart', cropPointerDown, { passive:false });
-    stage.addEventListener('touchmove', cropPointerMove, { passive:false });
-    stage.addEventListener('touchend', cropPointerUp);
-  }
-})();
 
 function togglePassVisibility(){
   const input = document.getElementById('adminPassInput');
@@ -2076,19 +1434,14 @@ function updateRolePill(){
   if(!pill || !currentRole) return;
   pill.className = 'role-pill ' + currentRole;
   if(currentRole === 'admin' && adminAvatar){
-    pill.innerHTML = `<img src="${adminAvatar}" alt="${getAccountName('admin')}">`;
-    pill.title = getAccountName('admin');
+    pill.innerHTML = `<img src="${adminAvatar}" alt="Admin">`;
+    pill.title = 'Admin';
   } else if(currentRole === 'guest' && guestAvatar){
-    pill.innerHTML = `<img src="${guestAvatar}" alt="${getAccountName('guest')}">`;
-    pill.title = getAccountName('guest');
+    pill.innerHTML = `<img src="${guestAvatar}" alt="Invité">`;
+    pill.title = 'Invité';
   } else {
     pill.innerHTML = currentRole === 'admin' ? '👤' : '👁';
-    pill.title = getAccountName(currentRole);
-  }
-  const nameEl = document.getElementById('roleNameDisplay');
-  if(nameEl){
-    nameEl.textContent = getAccountName(currentRole);
-    applyMyStyleToElement(nameEl, currentRole);
+    pill.title = currentRole === 'admin' ? 'Admin' : 'Invité';
   }
 }
 
@@ -2122,7 +1475,6 @@ function forceLogoutUI(){
    sélection de compte. L'appli reste aussi active en arrière-plan : on ne
    déconnecte plus automatiquement quand elle passe en fond. */
 function restoreSession(){
-  updateAccountNameDisplays();
   renderLoginAvatars();
   let savedRole = null;
   try{ savedRole = localStorage.getItem('novax_session_role'); }catch(e){}
@@ -2133,7 +1485,7 @@ function restoreSession(){
   let savedView = 'gaming', savedGame = 'fortnite';
   try{
     savedView = localStorage.getItem('novax_last_view') || 'gaming';
-    savedGame = localStorage.getItem('sweet_control_last_game') || 'fortnite';
+    savedGame = localStorage.getItem('novax_last_game') || 'fortnite';
   }catch(e){}
   switchView(savedView);
   switchGame(savedGame);
@@ -2208,7 +1560,7 @@ function openDetail(game, id){
 
   document.getElementById('drawerContent').innerHTML = `
     <div class="drawer-avatar">${initials(p.pseudo)}</div>
-    <h2 class="pname">${escapeHtml(p.pseudo)}</h2>
+    <h2>${escapeHtml(p.pseudo)}</h2>
     <div class="drole">${gameLabel}</div>
     <div class="drawer-stats">${statsHtml}${urlHtml}</div>
   `;
@@ -2238,67 +1590,8 @@ function goHome(){
   switchGame('fortnite');
 }
 
-
-function getAccountPseudos(){
-  return {
-    admin: localStorage.getItem('accountPseudoAdmin') || 'Matteo',
-    guest: localStorage.getItem('accountPseudoGuest') || 'Léo'
-  };
-}
-
-function saveAccountPseudos(){
-  const isAdmin = currentRole === 'admin';
-  const guestInput = document.getElementById('guestPseudoInput');
-  const adminInput = document.getElementById('adminPseudoInput');
-
-  const current = getAccountPseudos();
-  const adminPseudo = isAdmin ? (adminInput.value.trim() || current.admin) : current.admin;
-  const guestPseudo = guestInput.value.trim() || current.guest;
-
-  if(isAdmin){
-    localStorage.setItem('accountPseudoAdmin', adminPseudo);
-  }
-  localStorage.setItem('accountPseudoGuest', guestPseudo);
-
-  // Update visible account labels where applicable.
-  document.querySelectorAll('[data-account-role="admin"]').forEach(el => el.textContent = adminPseudo);
-  document.querySelectorAll('[data-account-role="guest"]').forEach(el => el.textContent = guestPseudo);
-
-  const msg = document.getElementById('pseudoMsg');
-  if(msg){
-    msg.className = 'settings-msg success';
-    msg.textContent = 'Pseudos enregistrés.';
-  }
-}
-
-function initAccountPseudoSettings(){
-  const p = getAccountPseudos();
-  const adminInput = document.getElementById('adminPseudoInput');
-  const guestInput = document.getElementById('guestPseudoInput');
-  const guestField = document.getElementById('guestPseudoField');
-
-  if(adminInput) adminInput.value = p.admin;
-  if(guestInput) guestInput.value = p.guest;
-
-  // Matteo can edit both; Léo can edit only his own pseudo.
-  if(currentRole === 'admin'){
-    if(adminInput) adminInput.disabled = false;
-    if(guestField) guestField.style.display = 'block';
-  } else {
-    if(adminInput){
-      adminInput.value = p.admin;
-      adminInput.disabled = true;
-    }
-    if(guestField) guestField.style.display = 'block';
-  }
-}
-
 function openSettings(){
-  initAccountPseudoSettings();
   closeSideMenu();
-  loadAccountNameInputs();
-  const namesMsg = document.getElementById('accountNamesMsg');
-  if(namesMsg){ namesMsg.textContent=''; namesMsg.className='settings-msg'; }
   const isAdmin = currentRole === 'admin';
   document.getElementById('adminPasswordSection').style.display = isAdmin ? 'block' : 'none';
   document.getElementById('adminAvatarSection').style.display = isAdmin ? 'block' : 'none';
@@ -2316,13 +1609,6 @@ function openSettings(){
   msg.className = 'settings-msg';
   msg.textContent = '';
   document.getElementById('themeToggle').checked = document.body.classList.contains('light-mode');
-  initPseudoGradient();
-  document.getElementById('pseudoColorSection').style.display = isAdmin ? 'block' : 'none';
-  const pseudoColorMsg = document.getElementById('pseudoColorMsg');
-  if(pseudoColorMsg){ pseudoColorMsg.className = 'settings-msg'; pseudoColorMsg.textContent = ''; }
-  initMyStyleSettings();
-  const mystyleMsg = document.getElementById('mystyleMsg');
-  if(mystyleMsg){ mystyleMsg.className = 'settings-msg'; mystyleMsg.textContent = ''; }
 
   const backupMsg = document.getElementById('backupMsg');
   backupMsg.className = 'settings-msg';
@@ -2392,170 +1678,6 @@ function copyBackupField(id){
     try{ document.execCommand('copy'); }catch(e2){}
   }
   showToast('Copié !');
-}
-
-/* ================= COULEUR DES PSEUDOS ================= */
-const PSEUDO_GRADIENTS = {
-  redblue: 'linear-gradient(90deg,#ff2d55,#2196ff)',
-  purplepink: 'linear-gradient(90deg,#7c3aed,#ec4899)',
-  cyanblue: 'linear-gradient(90deg,#06b6d4,#2563eb)',
-  greenblue: 'linear-gradient(90deg,#22c55e,#06b6d4)',
-  orangepink: 'linear-gradient(90deg,#f97316,#ec4899)',
-  goldred: 'linear-gradient(90deg,#facc15,#ef4444)',
-  ice: 'linear-gradient(90deg,#e0f2fe,#38bdf8)',
-  rainbow: 'linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#06b6d4,#6366f1,#ec4899)'
-};
-
-function applyPseudoGradient(name){
-  const gradient = PSEUDO_GRADIENTS[name] || PSEUDO_GRADIENTS.redblue;
-  document.documentElement.style.setProperty('--pseudo-gradient', gradient);
-  document.body.dataset.pseudoGradient = name;
-  document.querySelectorAll('.pseudo-gradient-option').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.gradient === name);
-  });
-  const preview = document.getElementById('pseudoGradientPreview');
-  if(preview) preview.style.backgroundImage = gradient;
-}
-
-function selectPseudoGradient(name){
-  if(!PSEUDO_GRADIENTS[name]) return;
-  localStorage.setItem('novax_pseudo_gradient', name);
-  applyPseudoGradient(name);
-  const msg = document.getElementById('pseudoColorMsg');
-  if(msg){
-    msg.className = 'settings-msg success';
-    msg.textContent = 'Couleur des pseudos enregistrée.';
-  }
-}
-
-function initPseudoGradient(){
-  const saved = localStorage.getItem('novax_pseudo_gradient') || 'redblue';
-  applyPseudoGradient(PSEUDO_GRADIENTS[saved] ? saved : 'redblue');
-}
-
-/* ================= STYLE PERSO DU PSEUDO (néon / cyberpunk) =================
-   Chaque compte (Matteo / Léo) choisit SA propre couleur et SA propre écriture
-   pour l'affichage de son pseudo. Réglage local à l'appareil, indépendant du
-   dégradé global "Couleur des pseudos" réservé à Matteo. */
-const MYSTYLE_COLOR_KEYS = ['classic','neoncyan','neonpink','neonpurple','neongreen','neonred','neongold','plasma'];
-const MYSTYLE_FONT_KEYS = ['classic','orbitron','audiowide','tech','rajdhani','pixel','unicodesans','unicodebold','unicodecaps'];
-/* Ces 3 styles ne sont pas des polices CSS : ce sont de vrais caractères
-   Unicode (Mathematical Alphanumeric Symbols / Petites Capitales) qui
-   remplacent chaque lettre du pseudo, donc ils s'affichent pareil partout. */
-const UNICODE_FONT_KEYS = ['unicodesans','unicodebold','unicodecaps'];
-
-function toMathSansBoldItalic(text){
-  const upperBase = 0x1D63C, lowerBase = 0x1D656, digitBase = 0x1D7EC;
-  let out = '';
-  for(const ch of String(text)){
-    if(ch >= 'A' && ch <= 'Z') out += String.fromCodePoint(upperBase + (ch.charCodeAt(0) - 65));
-    else if(ch >= 'a' && ch <= 'z') out += String.fromCodePoint(lowerBase + (ch.charCodeAt(0) - 97));
-    else if(ch >= '0' && ch <= '9') out += String.fromCodePoint(digitBase + (ch.charCodeAt(0) - 48));
-    else out += ch;
-  }
-  return out;
-}
-
-function toMathBoldItalic(text){
-  const upperBase = 0x1D468, lowerBase = 0x1D482, digitBase = 0x1D7CE;
-  let out = '';
-  for(const ch of String(text)){
-    if(ch >= 'A' && ch <= 'Z') out += String.fromCodePoint(upperBase + (ch.charCodeAt(0) - 65));
-    else if(ch >= 'a' && ch <= 'z') out += String.fromCodePoint(lowerBase + (ch.charCodeAt(0) - 97));
-    else if(ch >= '0' && ch <= '9') out += String.fromCodePoint(digitBase + (ch.charCodeAt(0) - 48));
-    else out += ch;
-  }
-  return out;
-}
-
-const SMALL_CAPS_MAP = {a:'ᴀ',b:'ʙ',c:'ᴄ',d:'ᴅ',e:'ᴇ',f:'ꜰ',g:'ɢ',h:'ʜ',i:'ɪ',j:'ᴊ',k:'ᴋ',l:'ʟ',m:'ᴍ',n:'ɴ',o:'ᴏ',p:'ᴘ',q:'ꞯ',r:'ʀ',s:'ꜱ',t:'ᴛ',u:'ᴜ',v:'ᴠ',w:'ᴡ',x:'x',y:'ʏ',z:'ᴢ'};
-function toSmallCapsBracket(text){
-  let out = '';
-  for(const ch of String(text)){
-    out += (ch >= 'a' && ch <= 'z') ? (SMALL_CAPS_MAP[ch] || ch) : ch;
-  }
-  return '『' + out + '』';
-}
-
-function unicodeTransform(text, font){
-  if(font === 'unicodesans') return toMathSansBoldItalic(text);
-  if(font === 'unicodebold') return toMathBoldItalic(text);
-  if(font === 'unicodecaps') return toSmallCapsBracket(text);
-  return text;
-}
-
-function getMyStyle(role){
-  let color = 'classic', font = 'classic';
-  try{
-    color = localStorage.getItem('novax_mystyle_color_' + role) || 'classic';
-    font = localStorage.getItem('novax_mystyle_font_' + role) || 'classic';
-  }catch(e){}
-  if(MYSTYLE_COLOR_KEYS.indexOf(color) === -1) color = 'classic';
-  if(MYSTYLE_FONT_KEYS.indexOf(font) === -1) font = 'classic';
-  return { color, font };
-}
-
-function applyMyStyleToElement(el, role){
-  if(!el || !role) return;
-  const style = getMyStyle(role);
-  MYSTYLE_COLOR_KEYS.forEach(k => el.classList.remove('mycolor-' + k));
-  MYSTYLE_FONT_KEYS.forEach(k => el.classList.remove('myfont-' + k));
-  el.classList.add('mystyled-name');
-  if(style.color !== 'classic') el.classList.add('mycolor-' + style.color);
-  if(style.font !== 'classic' && UNICODE_FONT_KEYS.indexOf(style.font) === -1) el.classList.add('myfont-' + style.font);
-  el.textContent = unicodeTransform(getAccountName(role), style.font);
-}
-
-function applyAllMyStyles(){
-  applyMyStyleToElement(document.getElementById('loginAdminNameLabel'), 'admin');
-  applyMyStyleToElement(document.getElementById('loginGuestNameLabel'), 'guest');
-  if(currentRole){
-    applyMyStyleToElement(document.getElementById('roleNameDisplay'), currentRole);
-  }
-}
-
-function updateMyStylePreview(){
-  if(!currentRole) return;
-  const preview = document.getElementById('mystylePreview');
-  if(!preview) return;
-  preview.textContent = getAccountName(currentRole);
-  applyMyStyleToElement(preview, currentRole);
-}
-
-function initMyStyleSettings(){
-  if(!currentRole) return;
-  const style = getMyStyle(currentRole);
-  document.querySelectorAll('#mystyleColorGrid .mystyle-option').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.mycolor === style.color);
-  });
-  document.querySelectorAll('#mystyleFontGrid .mystyle-font-option').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.myfont === style.font);
-  });
-  updateMyStylePreview();
-}
-
-function selectMyStyleColor(name){
-  if(!currentRole || MYSTYLE_COLOR_KEYS.indexOf(name) === -1) return;
-  try{ localStorage.setItem('novax_mystyle_color_' + currentRole, name); }catch(e){}
-  document.querySelectorAll('#mystyleColorGrid .mystyle-option').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.mycolor === name);
-  });
-  updateMyStylePreview();
-  applyAllMyStyles();
-  const msg = document.getElementById('mystyleMsg');
-  if(msg){ msg.className = 'settings-msg success'; msg.textContent = 'Style du pseudo enregistré.'; }
-}
-
-function selectMyStyleFont(name){
-  if(!currentRole || MYSTYLE_FONT_KEYS.indexOf(name) === -1) return;
-  try{ localStorage.setItem('novax_mystyle_font_' + currentRole, name); }catch(e){}
-  document.querySelectorAll('#mystyleFontGrid .mystyle-font-option').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.myfont === name);
-  });
-  updateMyStylePreview();
-  applyAllMyStyles();
-  const msg = document.getElementById('mystyleMsg');
-  if(msg){ msg.className = 'settings-msg success'; msg.textContent = 'Style du pseudo enregistré.'; }
 }
 
 /* ================= THEME ================= */
@@ -2631,7 +1753,7 @@ function closeAllSocialMenus(){
 function toggleSocialMenu(evt, key){
   evt.stopPropagation();
   if(currentRole !== 'admin'){
-    // Léo : un clic sur le rectangle ouvre directement le lien.
+    // Invité : un clic sur le rectangle ouvre directement le lien.
     openSocialLink(key);
     return;
   }
@@ -2710,7 +1832,7 @@ function switchGame(game){
   document.getElementById('section-rl').classList.toggle('active', game==='rl');
   document.getElementById('section-rlstd').classList.toggle('active', game==='rlstd');
   document.getElementById('section-brawl').classList.toggle('active', game==='brawl');
-  try{ localStorage.setItem('sweet_control_last_game', game); }catch(e){}
+  try{ localStorage.setItem('novax_last_game', game); }catch(e){}
 }
 
 function escapeHtml(str){
@@ -2779,52 +1901,10 @@ function bestPlayerStatHtml(player, game){
   return `<div class="stat-card"><div class="val" style="font-size:16px;">${escapeHtml(player.pseudo || '—')}</div><div class="lbl">Meilleur joueur · ${escapeHtml(value)}</div></div>`;
 }
 
-/* --- Badge "total joueurs" en haut de l'onglet Gaming (Fortnite + RL Sideswipe + RL) --- */
-function updateGamingTotalBadge(){
-  const totalEl = document.getElementById('gamingTotalCount');
-  if(!totalEl) return; // vue pas encore construite
-  const counts = {
-    fortnite: (games.fortnite.players || []).length,
-    rl:       (games.rl.players || []).length,
-    rlstd:    (games.rlstd.players || []).length,
-    brawl:    (games.brawl.players || []).length
-  };
-  const total = counts.fortnite + counts.rl + counts.rlstd + counts.brawl;
-  totalEl.textContent = total;
-  const fEl = document.getElementById('gamingTotalCount-fortnite');
-  const rlEl = document.getElementById('gamingTotalCount-rl');
-  const rlstdEl = document.getElementById('gamingTotalCount-rlstd');
-  const brawlEl = document.getElementById('gamingTotalCount-brawl');
-  if(fEl) fEl.textContent = counts.fortnite;
-  if(rlEl) rlEl.textContent = counts.rl;
-  if(rlstdEl) rlstdEl.textContent = counts.rlstd;
-  if(brawlEl) brawlEl.textContent = counts.brawl;
-}
-
-function toggleGamingTotalDropdown(e){
-  if(e) e.stopPropagation();
-  const dd = document.getElementById('gamingTotalDropdown');
-  const tab = document.getElementById('gamingTotalTab');
-  if(!dd || !tab) return;
-  dd.classList.toggle('show');
-  tab.classList.toggle('open', dd.classList.contains('show'));
-}
-
-document.addEventListener('click', function(e){
-  const dd = document.getElementById('gamingTotalDropdown');
-  const tab = document.getElementById('gamingTotalTab');
-  if(dd && dd.classList.contains('show') && tab && !tab.contains(e.target)){
-    dd.classList.remove('show');
-    tab.classList.remove('open');
-  }
-});
-
 function render(game){
   const players = games[game].players;
   const container = document.getElementById('rosterContainer-' + game);
   const statsEl = document.getElementById('stats-' + game);
-  updateGamingTotalBadge();
-  if(!container || !statsEl) return; // jeu sans section affichée dans cette version (ex: brawl)
   const bestPlayer = getBestPlayer(players, game);
 
   if(game === 'fortnite'){
@@ -2965,7 +2045,6 @@ function openModal(game){
   if(game === 'rl'){
     document.getElementById('fPeakRank-rl').value = '';
     document.getElementById('fWins-rl').value = '';
-    document.getElementById('fInput-rl').value = 'tactile';
     document.getElementById('fUrl-rl').value = '';
     dismissTrackerResult('rl');
   }
@@ -3020,7 +2099,6 @@ function editPlayer(game, id){
   if(game === 'rl'){
     document.getElementById('fPeakRank-rl').value = p.peakRank || '';
     document.getElementById('fWins-rl').value = p.wins || '';
-    document.getElementById('fInput-rl').value = p.input || 'tactile';
     document.getElementById('fUrl-rl').value = p.url || '';
     dismissTrackerResult('rl');
   }
@@ -3173,99 +2251,13 @@ async function confirmDelete(){
 }
 
 /* --- Service Worker : active des notifications "natives" (icône, vibration,
-   tiroir système) comme une vraie appli installée.
-   updateViaCache:'none' empêche le navigateur de revérifier tout seul sw.js
-   en arrière-plan : les mises à jour ne se font QUE depuis le bouton
-   "Mise à jour" du menu (checkForUpdate). --- */
+   tiroir système) comme une vraie appli installée. --- */
 if('serviceWorker' in navigator){
-  /* reloadingAfterUpdate évite une boucle infinie de rechargement si
-     "controllerchange" se déclenche plusieurs fois d'affilée. */
-  let reloadingAfterUpdate = false;
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if(reloadingAfterUpdate) return;
-    reloadingAfterUpdate = true;
-    window.location.reload();
-  });
-
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(reg => {
-      // Force une vérification immédiate d'une nouvelle version du sw.js
-      // (en plus de la vérification automatique faite par le navigateur).
-      reg.update().catch(() => {});
-    }).catch(err => {
+    navigator.serviceWorker.register('sw.js').catch(err => {
       console.error('Échec d\'enregistrement du service worker', err);
     });
   });
-}
-
-/* --- Mise à jour manuelle de l'appli (menu > Mise à jour) ---
-   Le sw.js n'active jamais tout seul une nouvelle version (pas de
-   skipWaiting() automatique dans son "install"), donc GitHub peut pousser
-   une nouvelle version sans qu'elle prenne effet toute seule.
-   Ce bouton fait exactement ce que le sw.js attend de lui : désinstaller
-   proprement l'ancien service worker + vider tous les caches, puis
-   réinstaller sw.js à neuf (qui re-télécharge l'app shell en cache:'no-store'),
-   et ne bascule dessus qu'une fois prêt. */
-async function checkForUpdate(){
-  const btn = document.getElementById('updateMenuBtn');
-  const originalLabel = btn ? btn.innerHTML : '';
-  if(btn){
-    btn.disabled = true;
-    btn.innerHTML = '<span class="side-menu-icon">⏳</span> Recherche...';
-  }
-  try{
-    if(!('serviceWorker' in navigator)){
-      showToast('Mises à jour non disponibles sur ce navigateur.');
-      return;
-    }
-
-    showToast('Recherche de la dernière version...');
-
-    // 1) Désinstalle proprement le(s) service worker(s) actuel(s).
-    const regs = await navigator.serviceWorker.getRegistrations();
-    await Promise.all(regs.map(r => r.unregister()));
-
-    // 2) Vide tous les caches locaux (l'app shell mis en cache par sw.js).
-    if('caches' in window){
-      const keys = await caches.keys();
-      await Promise.all(keys.map(k => caches.delete(k)));
-    }
-
-    // 3) Réinstalle sw.js à neuf : son "install" re-télécharge l'app shell
-    //    en cache:'no-store', donc toujours la dernière version du serveur.
-    const reg = await navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' });
-
-    // 4) Attend que le nouveau SW soit installé, puis le fait basculer
-    //    lui-même via SKIP_WAITING (il ne le ferait jamais tout seul).
-    await new Promise((resolve) => {
-      const worker = reg.installing || reg.waiting || reg.active;
-      if(!worker || worker.state === 'activated'){ resolve(); return; }
-      worker.addEventListener('statechange', function onChange(){
-        if(worker.state === 'installed'){
-          worker.postMessage({ type: 'SKIP_WAITING' });
-        }
-        if(worker.state === 'activated'){
-          worker.removeEventListener('statechange', onChange);
-          resolve();
-        }
-      });
-      // Filet de sécurité si l'état n'évolue pas comme prévu.
-      setTimeout(resolve, 3000);
-    });
-
-    showToast('Dernière version installée ✓');
-    setTimeout(() => window.location.reload(), 500);
-  }catch(e){
-    console.error('Erreur lors de la mise à jour', e);
-    showToast('Impossible de vérifier les mises à jour.');
-  }finally{
-    if(btn){
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.innerHTML = originalLabel;
-      }, 1500);
-    }
-  }
 }
 
 /* --- Système de notification : à chaque nouveau joueur ajouté (tous jeux confondus) --- */
@@ -3275,7 +2267,7 @@ function requestNotificationPermission(){
   }
 }
 
-const GAME_LABELS = { fortnite: 'Fortnite', rl: 'Rocket League Sideswipe', rlstd: 'Rocket League', brawl: 'Brawl Stars' };
+const GAME_LABELS = { fortnite: 'Fortnite', rl: 'Rocket League', rlstd: 'RL Standard', brawl: 'Brawl Stars' };
 
 async function notifyNewPlayer(game, pseudo){
   const gameLabel = GAME_LABELS[game] || game;
@@ -3342,7 +2334,6 @@ async function savePlayer(game){
   if(game === 'rl'){
     data.peakRank = document.getElementById('fPeakRank-rl').value.trim();
     data.wins = Number(document.getElementById('fWins-rl').value) || 0;
-    data.input = document.getElementById('fInput-rl').value;
     data.url = document.getElementById('fUrl-rl').value.trim();
   }
   if(game === 'rlstd'){
@@ -3424,21 +2415,14 @@ loadGame('rl');
 loadGame('rlstd');
 loadGame('brawl');
 initTheme();
-initPseudoGradient();
 requestNotificationPermission();
-updateAccountNameDisplays();
-applyAllMyStyles();
 restoreSession();
 checkStatsReminder();
 setInterval(checkStatsReminder, 5 * 60 * 1000);
-/* Une fois les données locales affichées (rapide, hors-ligne), on
-   rapatrie une bonne fois pour toutes les joueurs de l'ancien bin
-   Sweet_Control (si besoin), puis on va chercher la version partagée
-   avec Novax Esport pour rester à jour sur tous les appareils. */
-(async () => {
-  await migrateToSharedBin();
-  syncAllFromRemote();
-})();
+/* Une fois les données locales affichées (rapide, hors-ligne), on va
+   chercher la version partagée en ligne pour rester à jour sur tous
+   les appareils. */
+syncAllFromRemote();
 </script>
 
 </body>
